@@ -1,9 +1,5 @@
 import fs from "fs";
 import Jimp = require("jimp");
-import { NextFunction } from 'connect';
-import { Request, Response } from 'express';
-import * as jwt from 'jsonwebtoken';
-import { config } from '../config/config';
 
 // filterImageFromURL
 // helper function to download, filter, and save the filtered image locally
