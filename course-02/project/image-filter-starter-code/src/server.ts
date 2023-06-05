@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import fs from 'fs';
 import mimetypes from 'mime-types';
 import { Base64 } from 'js-base64';
-import {filterImageFromURL, deleteLocalFiles, isValidUrl, requireAuth} from './util/util';
+import {filterImageFromURL, deleteLocalFiles, isValidUrl} from './util/util';
 
 (async () => {
 
@@ -19,8 +19,7 @@ import {filterImageFromURL, deleteLocalFiles, isValidUrl, requireAuth} from './u
 
   // filteredimage Endpoint
   // returns a filterimage
-  app.get('/filteredimage/',
-  requireAuth, 
+  app.get('/filteredimage/',  
   async ( req: Request , res :Response) => {
 
     //Get the image_url from the query parameter.
