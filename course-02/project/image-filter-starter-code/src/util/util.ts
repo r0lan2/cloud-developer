@@ -1,5 +1,6 @@
 import fs from "fs";
 import Jimp = require("jimp");
+import path = require("path");
 
 // filterImageFromURL
 // helper function to download, filter, and save the filtered image locally
@@ -19,7 +20,7 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
         .quality(60) // set JPEG quality
         .greyscale() // set greyscale
         .write(__dirname + outpath, (img) => {
-          resolve(__dirname + outpath);
+          resolve(path.join(__dirname,outpath));
         });
     } catch (error) {
       reject(error);
