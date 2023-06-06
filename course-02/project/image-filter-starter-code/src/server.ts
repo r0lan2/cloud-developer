@@ -60,7 +60,7 @@ import {filterImageFromURL, deleteLocalFiles, isValidUrl} from './util/util';
     res.set('Content-Type', (!mime) ? 'application/octet-stream' : mime);
     fs.createReadStream(filterImagePath).pipe(res);
     //Delete file
-    await deleteLocalFiles([ filterImagePath ]);
+    res.on("finish", () => deleteLocalFiles([filterImagePath]));
   } );
   
   // Root Endpoint
